@@ -1,1 +1,12 @@
-Cycle Detected
+Visiting Node: 1
+Visiting Node: 2
+Visiting Node: 3
+Visiting Node: 4
+Visiting Node: 5
+Visiting Node: 6
+Level of Node 1 : 0
+Level of Node 2 : 1
+Level of Node 3 : 1
+Level of Node 4 : 2
+Level of Node 5 : 2
+Level of Node 6 : 2

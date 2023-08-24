@@ -40,6 +40,10 @@ int main()
     {
         cout << "Depth of Node " << i << " : " << depth[i] << endl;
     }
+    for (int i = 1; i <= n; i++)
+    {
+        cout << "Height of Node " << i << " : " << height[i] << endl;
+    }
 
     return 0;
 }

@@ -13,7 +13,7 @@ int main()
         int u, v, w;
         cin >> u >> v >> w;
         adj[u].push_back({v, w});
-        adj[v].push_back({u, w}); // Undirected
+        // adj[v].push_back({u, w}); // Undirected
     }
 
     for (int i = 1; i <= n; i++)

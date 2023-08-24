@@ -12,10 +12,11 @@ int main()
 
     for (int i = 0; i <= n; i++)
     {
-        int u, v;
-        cin >> u >> v;
-        adj[u][v] = 1;
-        adj[v][u] = 1; // If undirected
+        int u, v, w;
+        cin >> u >> v >> w;
+        // adj[u][v] = 1; // Unweighted
+        adj[u][v] = w;
+        // adj[v][u] = 1; // If undirected
     }
 
     for (int i = 1; i <= n; i++)
