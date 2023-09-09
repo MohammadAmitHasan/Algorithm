@@ -2,13 +2,12 @@
 using namespace std;
 
 typedef pair<int, int> pii;
-const int N = 1e5 + 7;
+const int N = 105;
 const int INF = 1e9 + 7;
 vector<pii> g[N];
 int d[N];
 
 int n, m;
-bool hasCycle = false;
 
 void bellman_ford(int s)
 {
@@ -17,9 +16,8 @@ void bellman_ford(int s)
 
     d[s] = 0;
 
-    for (int i = 1; i <= n; i++) // To detect cycle
+    for (int i = 1; i < n; i++)
     {
-
         for (int u = 1; u <= n; u++)
         {
             for (pii vpair : g[u])
@@ -29,9 +27,6 @@ void bellman_ford(int s)
 
                 if (d[u] != INF && d[v] > d[u] + w)
                 {
-                    if (i == n)
-                        hasCycle = true;
-
                     d[v] = d[u] + w;
                 }
             }
@@ -50,17 +45,15 @@ int main()
         g[u].push_back({v, w});
     }
 
-    bellman_ford(5);
+    bellman_ford(1);
 
-    if (hasCycle)
-        cout << "Has Cycle" << endl;
-    else
+    for (int i = 1; i <= n; i++)
     {
-        for (int i = 1; i <= n; i++)
-        {
-            cout << "Distance of " << i;
-            cout << ": " << d[i] << endl;
-        }
+        if (d[i] == INF && i != 1)
+            cout << "30000"
+                 << " ";
+        else
+            cout << d[i] << " ";
     }
 
     return 0;
